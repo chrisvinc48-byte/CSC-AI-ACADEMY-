@@ -1,0 +1,137 @@
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap');
+*{box-sizing:border-box}
+body{
+  background:#000000;
+  color:#ffffff;
+  font-family:'Inter',sans-serif;
+  padding:24px;
+  margin:0;
+  min-height:100vh;
+  position:relative;
+  overflow-x:hidden;
+}
+/* WATERMARK - CSC LOGO STYLE BRAIN */
+.logo-watermark{
+  position:fixed;
+  top:5%;
+  left:50%;
+  transform:translateX(-50%);
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  border:3px solid transparent;
+  border-top-color:#00e5ff;
+  border-bottom-color:#00b8cc;
+  opacity:0.15;
+  z-index:-3;
+  animation: orbitLogo 4s linear infinite;
+  box-shadow:0 0 30px #00e5ff55;
+}
+.logo-watermark::after{
+  content:"";
+  position:absolute;
+  top:-8px; left:75%;
+  width:14px; height:14px;
+  background:#00e5ff;
+  border-radius:50%;
+  box-shadow:0 0 15px #00e5ff;
+}
+@keyframes orbitLogo{ to{ transform:translateX(-50%) rotate(360deg); } }
+
+/* CYAN RAIN */
+.rain{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-2;
+  background: repeating-linear-gradient(95deg, transparent 0 3px, rgba(0,229,255,0.15) 3px 4px);
+  background-size:100% 300px;
+  animation: rainCyan 1s linear infinite;
+  opacity:0.4;
+}
+@keyframes rainCyan{ 0%{ transform:translateY(-300px); } 100%{ transform:translateY(300px); } }
+
+/* HEADER LIKE YOUR PIC */
+.logo-img{
+  display:block;
+  width:120px;
+  margin:20px auto 10px auto;
+  filter: drop-shadow(0 0 15px #00e5ff);
+  animation: logoGlow 2s ease-in-out infinite alternate;
+}
+@keyframes logoGlow{ from{ filter:drop-shadow(0 0 10px #00e5ff); } to{ filter:drop-shadow(0 0 25px #00e5ff) drop-shadow(0 0 40px #00e5ff88); } }
+
+h1{
+  text-align:center;
+  font-size:32px;
+  font-weight:900;
+  letter-spacing:-1px;
+  margin:5px 0 0 0;
+  color:white;
+}
+h1 span{ color:white; }
+h1 .cyan{ color:#00e5ff; }
+.sub{
+  text-align:center;
+  color:#00e5ff;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:4px;
+  margin-top:2px;
+}
+.tagline{
+  text-align:center;
+  color:#ffffffcc;
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin:10px 0 25px 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+.tagline::before, .tagline::after{
+  content:"";
+  width:30px;
+  height:2px;
+  background:#00e5ff;
+}
+
+label{ color:#00e5ff; font-size:11px; text-transform:uppercase; letter-spacing:1.2px; font-weight:700; margin-top:18px; display:block; }
+input,select{
+  width:100%; padding:16px; margin:10px 0;
+  border-radius:12px;
+  border:1px solid #1a1a1a;
+  background:#0f0f0f;
+  color:white; font-size:15px;
+}
+input:focus, select:focus{ border-color:#00e5ff; box-shadow:0 0 15px #00e5ff55; outline:none; }
+button{
+  width:100%; padding:17px;
+  background: linear-gradient(90deg, #00b8cc, #00e5ff);
+  color:#000; font-weight:900; border:none; border-radius:12px; margin-top:20px;
+  letter-spacing:0.5px;
+  box-shadow:0 0 20px #00e5ff77;
+}
+button.white{ background:transparent; border:1px solid #00e5ff; color:#00e5ff; }
+.card{
+  background:#0f0f0f;
+  border:1px solid #1f1f1f;
+  border-left:3px solid #00e5ff;
+  padding:20px; border-radius:12px; margin-top:22px;
+  min-height:100px; white-space:pre-wrap; color:#e0e0e0;
+  box-shadow:0 0 20px #00e5ff11;
+}
+.testi-wrap{
+  overflow:hidden;
+  background:#0f0f0f;
+  border:1px solid #1f1f1f;
+  border-left:3px solid #00e5ff;
+  border-radius:12px;
+  margin:20px 0;
+  height:56px;
+}
+.testi-track{ display:flex; width:500%; height:100%; transition:transform 0.8s ease; }
+.testi{ width:100%; flex-shrink:0; display:flex; align-items:center; padding:0 16px; font-size:13px; color:#ccc; font-style:italic; }
+.testi b{ color:#00e5ff; }

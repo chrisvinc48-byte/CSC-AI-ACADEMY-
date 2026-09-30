@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSC AI Academy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="rain"></div>
+<div class="logo-watermark"></div>
+
+<img src="logo.png" class="logo-img" onerror="this.style.display='none'">
+
+<h1>CSC</h1>
+<div class="sub"><span style="color:#00e5ff">AI</span> ACADEMY</div>
+<div class="tagline">Learn to build with AI</div>
+
+<div class="testi-wrap">
+  <div class="testi-track" id="testiTrack">
+    <div class="testi"><b>Blessing, Lagos:</b> "This AI made me 15k in 2 days!" ⭐⭐⭐⭐⭐</div>
+    <div class="testi"><b>Chidi, Enugu:</b> "3 ebooks in one day, so easy!" ⭐⭐⭐⭐⭐</div>
+    <div class="testi"><b>Aisha, Abuja:</b> "My Selar now selling daily" ⭐⭐⭐⭐⭐</div>
+    <div class="testi"><b>Tunde, PH:</b> "From zero to ebook in 10 secs" ⭐⭐⭐⭐⭐</div>
+    <div class="testi"><b>Grace, Owerri:</b> "Best AI for Nigerians" ⭐⭐⭐⭐⭐</div>
+  </div>
+</div>
+
+<label>Groq Api Key</label>
+<input id="apiKey" type="password" placeholder="gsk_...">
+
+<label>Business Idea</label>
+<input id="idea" placeholder="e.g POS business">
+
+<label>Your Selar / WhatsApp URL</label>
+<input id="myUrl" placeholder="https://selar.com/...">
+
+<label>What to Generate</label>
+<select id="type">
+<option value="ebook">Full Ebook</option>
+<option value="cover">Cover Prompt</option>
+<option value="selar">Selar Sales Page</option>
+<option value="video">Video Script</option>
+</select>
+
+<button onclick="generate()">GENERATE NOW</button>
+<div id="output" class="card">Your result will appear here...</div>
+<button class="white" onclick="shareResult()">Share to WhatsApp</button>
+
+<script src="app.js"></script>
+<script>
+let idx=0;
+setInterval(()=>{
+  idx=(idx+1)%5;
+  document.getElementById('testiTrack').style.transform=`translateX(-${idx*100}%)`;
+},3000);
+</script>
+</body>
+</html>
